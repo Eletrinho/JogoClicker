@@ -16,7 +16,7 @@ def main():
     root.resizable(True, True) 
 
     geradores = [
-        Gerador('Gerador1', 10, 2, total),
+        Gerador('Gerador1', 10, 1, total),
         Gerador('Gerador2', 15, 3, total),
         # Adicione mais geradores conforme necessário
     ]
@@ -35,7 +35,7 @@ def main():
         gerador.iniciar_tarefa()  # Iniciar a tarefa de geração contínua
         row_counter += 2
 
-    tk.Button(frame, text='+ 1 ', command=add).grid(column=0, row=row_counter + 1)
+    tk.Button(frame, text='+ 1 ', command=lambda a=add: add(cps)).grid(column=0, row=row_counter + 1)
 
     root.mainloop()
 
